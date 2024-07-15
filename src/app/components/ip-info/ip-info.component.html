@@ -1,16 +1,15 @@
 <div class="container">
-    <h2>IP Info</h2>
-    <input [(ngModel)]="ip" placeholder="Enter IP">
-    <button (click)="getIpInfo()">Get IP Info</button>
-    <div *ngIf="ipInfo">
-      <p>IP: {{ ipInfo.ip }}</p>
-      <p>City: {{ ipInfo.city }}</p>
-      <p>Region: {{ ipInfo.region }}</p>
-      <p>Country: {{ ipInfo.country }}</p>
-      <p>Location: {{ ipInfo.loc }}</p>
-      <p>Org: {{ ipInfo.org }}</p>
-      <p>Postal: {{ ipInfo.postal }}</p>
-      <p>Timezone: {{ ipInfo.timezone }}</p>
-    </div>
+  <input type="text" [(ngModel)]="ip" placeholder="Coloca una IP" />
+  <button (click)="getIpInfo()">Conseguir IP</button>
+  <div *ngIf="loading" class="loading">Cargando...</div>
+  <div *ngIf="ipInfo && !loading" class="ip-info-container">
+    <p><strong>IP:</strong> {{ ipInfo.ip }}</p>
+    <p><strong>Ciudad:</strong> {{ ipInfo.city }}</p>
+    <p><strong>Region:</strong> {{ ipInfo.region }}</p>
+    <p><strong>Pais:</strong> {{ ipInfo.country }}</p>
+    <p><strong>Localizacion:</strong> {{ ipInfo.loc }}</p>
+    <p><strong>Organizacion:</strong> {{ ipInfo.org }}</p>
+    <p><strong>Codigo Postal:</strong> {{ ipInfo.postal }}</p>
+    <p><strong>Zona de tiempo:</strong> {{ ipInfo.timezone }}</p>
   </div>
-  
+</div>

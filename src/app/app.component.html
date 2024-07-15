@@ -1,7 +1,9 @@
 <nav>
   <ul>
-    <li><a routerLink="/my-ip">My IP</a></li>
-    <li><a routerLink="/ip-info">IP Info</a></li>
+    <li><a routerLink="/my-ip" routerLinkActive="active-link">Mi IP</a></li>
+    <li><a routerLink="/ip-info" routerLinkActive="active-link">IP Informacion</a></li>
   </ul>
 </nav>
-<router-outlet></router-outlet>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

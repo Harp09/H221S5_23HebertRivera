@@ -9,18 +9,21 @@ import { IpInfoService, IpInfo } from '../../services/ip-info.service';
 export class IpInfoComponent {
   ip: string = '';
   ipInfo: IpInfo | null = null;
+  loading: boolean = false;
 
-  constructor(private ipInfoService: IpInfoService) { }
+  constructor(private ipInfoService: IpInfoService) {}
 
   getIpInfo(): void {
-    if (this.ip) {
-      this.ipInfoService.getIpInfo(this.ip).subscribe(info => {
+    this.loading = true;
+    this.ipInfoService.getIpInfo(this.ip).subscribe(
+      (info: IpInfo) => {
         this.ipInfo = info;
-      }, error => {
-        console.error('Error fetching IP info:', error);
-      });
-    } else {
-      console.warn('IP address is required');
-    }
+        this.loading = false;
+      },
+      (error: any) => {
+        console.error('Error getting IP info:', error);
+        this.loading = false;
+      }
+    );
   }
 }

@@ -1,10 +1,48 @@
-.container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
+/* Estilos globales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para la navegación */
+nav {
+  background-color: #007bff;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav ul li a.active-link {
+  text-decoration: underline;
+}
+
+/* Estilos para el contenido */
+.content {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 3rem); /* Ajusta según la altura de la navegación */
+  padding: 1rem;
+}

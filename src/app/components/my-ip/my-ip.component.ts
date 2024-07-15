@@ -7,15 +7,22 @@ import { IpInfoService } from '../../services/ip-info.service';
   styleUrls: ['./my-ip.component.css']
 })
 export class MyIpComponent {
-  myIp: string = '';
-  showIp: boolean = false;
+  myIp: string | null = null;
+  loading: boolean = false;
 
-  constructor(private ipInfoService: IpInfoService) { }
+  constructor(private ipInfoService: IpInfoService) {}
 
-  getMyIP() {
-    this.ipInfoService.getMyIP().subscribe((ip: string) => {
-      this.myIp = ip;
-      this.showIp = true;
-    });
+  getMyIP(): void {
+    this.loading = true;
+    this.ipInfoService.getMyIP().subscribe(
+      (ip: string) => {
+        this.myIp = ip;
+        this.loading = false;
+      },
+      (error: any) => {
+        console.error('Error getting IP:', error);
+        this.loading = false;
+      }
+    );
   }
 }
