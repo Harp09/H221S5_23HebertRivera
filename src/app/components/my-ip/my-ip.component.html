@@ -1,0 +1,6 @@
+<div>
+  <button (click)="getMyIP()">Get My IP</button>
+  <div *ngIf="showIp" class="ip-box">
+    <p>Your IP is: {{ myIp }}</p>
+  </div>
+</div>

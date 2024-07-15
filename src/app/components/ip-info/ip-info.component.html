@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>IP Info</h2>
+    <input [(ngModel)]="ip" placeholder="Enter IP">
+    <button (click)="getIpInfo()">Get IP Info</button>
+    <div *ngIf="ipInfo">
+      <p>IP: {{ ipInfo.ip }}</p>
+      <p>City: {{ ipInfo.city }}</p>
+      <p>Region: {{ ipInfo.region }}</p>
+      <p>Country: {{ ipInfo.country }}</p>
+      <p>Location: {{ ipInfo.loc }}</p>
+      <p>Org: {{ ipInfo.org }}</p>
+      <p>Postal: {{ ipInfo.postal }}</p>
+      <p>Timezone: {{ ipInfo.timezone }}</p>
+    </div>
+  </div>
+  
