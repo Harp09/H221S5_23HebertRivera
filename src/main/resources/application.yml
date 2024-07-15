@@ -1,0 +1,15 @@
+spring:
+  application:
+    name : Backapi
+  data:
+    mongodb:
+      uri: mongodb+srv://hebertrivera:Mirana451@harp.rkqvdnb.mongodb.net/Iplocalize?retryWrites=true&w=majority
+
+server:
+  port: 8080
+
+ipify:
+  api-url: https://api.ipify.org
+ipinfo:
+  api-url: https://ipinfo.io
+  token: a1ea185b512a5e  # Reemplaza esto con tu token real
